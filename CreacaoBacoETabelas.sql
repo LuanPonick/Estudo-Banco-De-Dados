@@ -3,14 +3,17 @@ CREATE database Projeto;
 use Projeto;
 
 DROP database Projeto
-
+DROP TABLE PRE_REQ;
+--
 CREATE TABLE PRE_REQ(
 	codigo_disc int,
 	codigo_disc_dependencia int
 
-	primary key (codigo_disc, codigo_disc_dependencia)
+	primary key (codigo_disc, codigo_disc_dependencia),
+	constraint fk_PreDis foreign key (codigo_disc) references DICIPLINA (codigo),
+	constraint fk_PreDis foreign key (codigo_disc_dependencia) references DICIPLINA (codigo)
 );
-
+--2
 CREATE TABLE DEPARTAMENTO(
 	codigo int,
 	nome varChar(30)
@@ -18,7 +21,7 @@ CREATE TABLE DEPARTAMENTO(
 	primary key(codigo)
 );
 
-
+--3
 CREATE TABLE PROFESSOR(
 	matricula int,
 	nome varChar(30),
@@ -38,15 +41,16 @@ CREATE TABLE COMPOE(
 
 	primary key(codigo_curso, codigo_disc),
 	constraint fk_ComCur foreign key(codigo_curso) references CURSO(codigo),
-	constraint fk_ComDis foreign key(codigo_disc) references DISCIPLINA(codigo)
+	constraint fk_ComDic foreign key(codigo_disc) references DISCIPLINA(codigo)
 );
 
 CREATE TABLE CURSA (
 cpf_aluno varChar(11),
 codigo_disc int,
 
-primary key (cpf_aluno),
-constraint fk_CurDis foreign key(codigo_disc) references DISCIPLINA (codigo_disc)
+primary key (cpf_aluno,codigo_disc),
+constraint fk_CurDis foreign key(codigo_disc) references DISCIPLINA (codigo),
+constraint fk_CurAlu foreign key(cpf_aluno) references ALUNO (cpf)
 );
 
 CREATE TABLE DISCICLINA (
@@ -56,7 +60,7 @@ matricula_prof int,
 nome varChar (40),
 
 primary key (codigo),
-constraint fk_disPro (matricula_prof) references PROFESSOR (matricula_prof);
+constraint fk_DisPro (matricula_prof) references PROFESSOR (matricula)
 );
 
 CREATE TABLE MATRICULA(
@@ -65,7 +69,8 @@ CREATE TABLE MATRICULA(
     data_matricula date
 
     primary key(codigo_curso, cpf_aluno),
-    constraint fk_MatCur foreign key (codigo_curso) references CURSO (codigo)
+    constraint fk_MatCur foreign key (codigo_curso) references CURSO (codigo),
+	constraint fk_MatAlu foreign key (cpf_aluno) references ALUNO (cpf)
 );
 
 CREATE TABLE CURSO(
@@ -77,7 +82,7 @@ CREATE TABLE CURSO(
     primary key(codigo),
     constraint fk_CurDep foreign key (codigo_dpto) references DEPARTAMENTO (codigo)
 );
-
+--1
 CREATE TABLE ALUNO (
 	cpf varChar(11),
 	nome varChar(30),
