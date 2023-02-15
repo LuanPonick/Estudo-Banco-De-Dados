@@ -1,4 +1,6 @@
 use Projeto;
+use master
+
 --1
 INSERT INTO ALUNO (CPF, NOME, ENDERECO, TELEFONE, DATA_NASC)
 VALUES
@@ -133,24 +135,267 @@ VALUES
 ('99141819171', 'Reinaldo Murilo da Silva', '09633 Baker Square', '+1-154-623-3842x183', '1930/03/26'),
 ('99622109983', 'Cíntia Regina Schneider Teles', '2489 Barton Cliffs Suite 644', '+1-767-558-2046x80568', '1941/06/04');
 
---
+--2
+INSERT INTO DEPARTAMENTO(CODIGO,NOME)
+VALUES
+(next value for codigoDep_seq,'Exatas'),
+(next value for codigoDep_seq,'Humanas'),
+(next value for codigoDep_seq,'Idiomas'),
+(next value for codigoDep_seq,'Diretoria'),
+(next value for codigoDep_seq,'Administração'),
+(next value for codigoDep_seq,'Secretaria'),
+(next value for codigoDep_seq,'Financeiro'),
+(next value for codigoDep_seq,'RH'),
+(next value for codigoDep_seq,'TI');
+
+--3 
+
+INSERT INTO PROFESSOR(matricula,NOME, ENDERECO, TELEFONE, DATA_NASC, codigo_depto, data_contratacao) 
+VALUES
+(next value for matricula_seq,'Gabriela Genir Marinho', '000 Wright Motorway Suite 352', '+1-006-414-8797', '1954/12/08', 1, '2016/12/13'),
+(next value for matricula_seq,'Marli de Holanda Opinvic', '00183 Charles Mountain', '+1-008-628-9256x246', '1963/01/15', 2, '2016/04/07'),
+(next value for matricula_seq,'Walter Mário de Muniz', '00626 Jonathan Hollow Apt. 314', '+55-11-99999-8888', '1958/03/21', 3, '2016/09/25'),
+(next value for matricula_seq,'Cléber de Vasconcelos', '0134 Murray Walk', '+55-11-4224-2626', '1957/08/09', 9, '2020/10/05'),
+(next value for matricula_seq,'Selena Caroline Cavalcante da Silva', '0137 Shelton Rest Apt. 273', '+1-013-001-8838', '1935/01/04', 1, '2016/11/09'),
+(next value for matricula_seq,'Gabriela da Silva de Macedo', '0165 Drew Junction Suite 552', '+1-026-402-2651', '1930/10/06', 2, '2020/05/17'),
+(next value for matricula_seq,'Heitor Raul de Meireles Rilia', '0181 Ronald Brooks', '+1-032-081-6436', '1950/02/02', 3, '2019/02/06'),
+(next value for matricula_seq,'Gabriela Maria Ribohi Valente', '01932 Garcia Expressway Suite 183', '+1-037-591-5560x81884', '1954/04/20', 9, '2021/05/24'),
+(next value for matricula_seq,'Lúcio Ceilson', '015 Johnson Stravenue Suite 582', '+1-019-168-1103x30298', '1973/04/25', 1, '2021/07/06'),
+(next value for matricula_seq,'Marco Yumoma Neto', '01627 Lopez Path Suite 161', '+1-024-173-1193x0353', '1969/05/22', 2, '2016/04/18'),
+(next value for matricula_seq,'Áureo de Palhares Neiol', '0214 Ramos Bypass Apt. 986', '+55-51-92929-5550', '1951/02/26', 3, '2017/08/24'),
+(next value for matricula_seq,'Sílvia Rosimeire Franco', '022 Thomas Ridges Apt. 464', '+55-11-91010-2020', '1940/04/04', 9, '2019/12/03'),
+(next value for matricula_seq,'João Osvaldo de Oliva do Prado', '02794 Carr Mountains', '+55-11-97887-8007', '1942/05/15', 1, '2020/10/08'),
+(next value for matricula_seq,'Flaviana Supugeko de Arantes', '031 Cook Ville Suite 523', '+55-21-90909-4444', '1996/05/07', 2, '2016/07/30'),
+(next value for matricula_seq,'Ronaldo Severino Berrea Bozuga', '03656 Ward Plaza Apt. 978', '+1-047-466-1919x28434', '1931/01/12', 3, '2017/09/14'),
+(next value for matricula_seq,'Romildo Ademar da Silva Fragoso Júnior', '0377 Joshua Circle', '+1-051-279-6304x91019', '1942/11/25', 9, '2017/09/05'),
+(next value for matricula_seq,'Bella Biwo', '03836 Lydia Creek Apt. 778', '+1-060-465-8808x51762', '1932/08/15', 1, '2016/06/23'),
+(next value for matricula_seq,'Márcio de Oliveira Negrão', '041 Lin Lock', '+1-061-832-1376x6059', '1930/02/21', 2, '2021/06/15'),
+(next value for matricula_seq,'Décio de Leão do Amaral Terceiro', '04312 Haley Island', '+1-065-022-0820', '1981/04/06', 3, '2016/06/03'),
+(next value for matricula_seq,'Moacyr Arthur Góis', '05983 Michael Spring Suite 047', '+55-19-90001-8889', '1986/02/28', 9, '2021/09/05');
+
+--4
+INSERT INTO DISCIPLINA(codigo,nome, qtde_creditos, matricula_prof)
+VALUES
+(next value for codigoDis_seq,'Cálculo 1', 2, 5),
+(next value for codigoDis_seq,'Cálculo 2', 3, 1),
+(next value for codigoDis_seq,'Probabilidade', 4, 8),
+(next value for codigoDis_seq,'Equações Lineares', 5, 16),
+(next value for codigoDis_seq,'Matemática Financeira', 3, 17),
+(next value for codigoDis_seq,'Admin. e Contabilidade', 2, 9),
+(next value for codigoDis_seq,'Mercado de Capitais', 4, 17),
+(next value for codigoDis_seq,'Python', 3, 4),
+(next value for codigoDis_seq,'Data Science e IA', 5, 12),
+(next value for codigoDis_seq,'Banco de Dados', 6, 20),
+(next value for codigoDis_seq,'Circuitos Elétricos', 3, 13),
+(next value for codigoDis_seq,'Instalações Elétricas', 4, 13),
+(next value for codigoDis_seq,'Elementos do Marketing', 3, 2),
+(next value for codigoDis_seq,'Mapeamento do Público', 4, 2),
+(next value for codigoDis_seq,'Criação e Melhorias', 5, 2),
+(next value for codigoDis_seq,'Mídias Sociais', 6, 2),
+(next value for codigoDis_seq,'Comportam. do Consumidor', 3, 18),
+(next value for codigoDis_seq,'Comércio exterior', 4, 6),
+(next value for codigoDis_seq,'Gestão de Projetos', 5, 6),
+(next value for codigoDis_seq,'Introd. Psicologia', 2, 18),
+(next value for codigoDis_seq,'Gestão de Competências', 3, 14),
+(next value for codigoDis_seq,'Identif. Realoc. de Talentos', 4, 14),
+(next value for codigoDis_seq,'Concepções de Linguagem', 2, 10),
+(next value for codigoDis_seq,'Gêneros Literários', 3, 10),
+(next value for codigoDis_seq,'Variação Linguística', 4, 10),
+(next value for codigoDis_seq,'Literaturas na Educação Básica', 5, 10),
+(next value for codigoDis_seq,'Inglês Básico', 2, 19),
+(next value for codigoDis_seq,'Inglês Intermediário', 3, 19),
+(next value for codigoDis_seq,'Inglês Avançado', 4, 15),
+(next value for codigoDis_seq,'Espanhol Básico', 2, 3),
+(next value for codigoDis_seq,'Espanhol Intermediário', 3, 3),
+(next value for codigoDis_seq,'Espanhol Avançado', 4, 15),
+(next value for codigoDis_seq,'Alemão Básico', 2, 11),
+(next value for codigoDis_seq,'Alemão Intermediário', 3, 11),
+(next value for codigoDis_seq,'Alemão Avançado', 4, 11),
+(next value for codigoDis_seq,'Francês Básico', 2, 7),
+(next value for codigoDis_seq,'Francês Intermediário', 3, 7),
+(next value for codigoDis_seq,'Francês Avançado', 4, 7);
+
+--5
+INSERT INTO CURSA(cpf_aluno,codigo_disc)
+VALUES
+('05020555555', 27),
+('06169933554', 23),
+('01437901196', 27),
+('01712609174', 23),
+('01861002026', 1),
+('02928272625', 1),
+('10130986185', 28),
+('10299761377', 28),
+('10468536559', 1),
+('11122233344', 3),
+('12141618201', 23),
+('12345678977', 6),
+('15234516524', 13),
+('16922268394', 14),
+('17780734413', 8),
+('18590127865', 23),
+('20297772132', 2),
+('21212121212', 29),
+('21985524001', 8),
+('22233344455', 2),
+('22558877441', 33),
+('23673275870', 36),
+('25361027740', 29),
+('27048779600', 29),
+('28736531478', 28),
+('30424283347', 17),
+('31914223344', 6),
+('32112035216', 24),
+('33355599988', 19),
+('33799787085', 11),
+('34123567630', 33),
+('35467646557', 4),
+('35487538954', 6),
+('37175290824', 13),
+('38863042693', 30),
+('40550794562', 6),
+('42238546431', 20),
+('43424140187', 31),
+('43926298300', 34),
+('44445555665', 27),
+('45614050170', 27),
+('47301802039', 36),
+('48989553908', 31),
+('50466400847', 9),
+('50677305777', 9),
+('51010052012', 11),
+('52201370078', 18),
+('52365057644', 21),
+('53392688143', 21),
+('54052809516', 22),
+('54584006209', 28),
+('55740561385', 6),
+('55775324274', 34),
+('56966642339', 8),
+('57428313254', 30),
+('57585758579', 4),
+('58157960405', 9),
+('59116065123', 21),
+('59349278470', 1),
+('60540596536', 13),
+('60803816994', 1),
+('61731914601', 30),
+('62491568861', 30),
+('62626255555', 6),
+('62923232666', 34),
+('64114550732', 36),
+('64179320731', 24),
+('64477543628', 14),
+('64828219030', 25),
+('65178894431', 37),
+('65305868797', 18),
+('65529569832', 38),
+('65867072600', 8),
+('65880245234', 36),
+('66230920635', 17),
+('66497186863', 33),
+('66581596036', 24),
+('66809234064', 4),
+('66932271437', 36),
+('67282946839', 14),
+('67554824469', 8),
+('67633622240', 6),
+('67688504928', 12),
+('67984297641', 30),
+('68334973043', 7),
+('68685648444', 23),
+('68752234762', 14),
+('68879822993', 6),
+('69036323845', 10),
+('69242576334', 33),
+('69386999246', 29),
+('69737674648', 1),
+('70071141059', 11),
+('70088350049', 16),
+('70439025450', 22),
+('70789700852', 30),
+('70930328207', 28),
+('71140376253', 9),
+('71262459124', 12),
+('71491051654', 32),
+('71841727055', 34),
+('72192402457', 13),
+('72453777190', 17),
+('72543077858', 11),
+('72618080077', 1),
+('73645095255', 32),
+('74174171444', 15),
+('74305831946', 22),
+('74836413320', 18),
+('75993583815', 28),
+('76027731386', 5),
+('77219049451', 1),
+('77681335684', 31),
+('79369087553', 9),
+('81056839422', 20),
+('82744591292', 21),
+('84432343161', 35),
+('85095067979', 3),
+('85285287414', 13),
+('86120095098', 10),
+('87807846899', 6),
+('89495598768', 27),
+('91183350638', 29),
+('92871102507', 7),
+('94558854373', 28),
+('96246606245', 21),
+('97934358114', 28),
+('98598598598', 22),
+('99141819171', 3),
+('99622109983', 25),
+('27048779600', 8),
+('28736531478', 14),
+('30424283347', 27),
+('31914223344', 4),
+('32112035216', 31),
+('33355599988', 28),
+('33799787085', 29),
+('34123567630', 27),
+('68685648444', 30),
+('68752234762', 28),
+('68879822993', 2),
+('69036323845', 27),
+('69242576334', 28),
+('69386999246', 9),
+('69737674648', 3),
+('70071141059', 27),
+('70088350049', 20),
+('70439025450', 13),
+('70789700852', 33),
+('70930328207', 14),
+('71140376253', 28),
+('71262459124', 9),
+('71491051654', 34),
+('71841727055', 27),
+('72192402457', 28),
+('72453777190', 29),
+('72543077858', 27),
+('72618080077', 10),
+('73645095255', 35),
+('74174171444', 21);
+
+--6
 INSERT INTO CURSO (CODIGO,NOME, DESCRICAO, CODIGO_DPTO)
 VALUES
-(next value for curso_seq,'Estatística', 'Cálculos e conceitos matemáticos relacionados à estatísticas.', 1),
-(next value for curso_seq,'Finanças', 'Fundamentos e noções básicas sobre finanças e mercado de capitais.', 1),
-(next value for curso_seq,'Ciência da Computação', 'Lógica de Programação com linguagem Python e cálculos matemáticos básicos, Banco de Dados etécnicas/ferramentas de Data Science e IA.', 9),
-(next value for curso_seq,'Engenharia Elétrica', 'Técnicas para projetar e implementar instalações e circuitos elétricos.', 1),
-(next value for curso_seq,'Marketing', 'Conceitos e técnicas para Marketing, trabalhando com ferramentas de propaganda e publicidade.', 2),
-(next value for curso_seq,'Gestão de RH', 'Psicologia e prática para trabalhar com Recursos Humanos, buscando e explorando habilidades das pessoas.', 2),
-(next value for curso_seq,'Gestão Comercial', 'Administração e desenvolvimento de propagandas, vendas, gestão de projetos comerciais e liderança deequipe.', 2),
-(next value for curso_seq,'Letras', 'Conhecimento e exploração profunda na literatura brasileira e básica na literatura mundial.', 2),
-(next value for curso_seq,'Inglês', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3),
-(next value for curso_seq,'Espanhol', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3),
-(next value for curso_seq,'Alemão', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3),
-(next value for curso_seq,'Francês', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3)
-;
---
+(next value for codigoCur_seq,'Estatística', 'Cálculos e conceitos matemáticos relacionados à estatísticas.', 1),
+(next value for codigoCur_seq,'Finanças', 'Fundamentos e noções básicas sobre finanças e mercado de capitais.', 1),
+(next value for codigoCur_seq,'Ciência da Computação', 'Lógica de Programação com linguagem Python e cálculos matemáticos básicos, Banco de Dados etécnicas/ferramentas de Data Science e IA.', 9),
+(next value for codigoCur_seq,'Engenharia Elétrica', 'Técnicas para projetar e implementar instalações e circuitos elétricos.', 1),
+(next value for codigoCur_seq,'Marketing', 'Conceitos e técnicas para Marketing, trabalhando com ferramentas de propaganda e publicidade.', 2),
+(next value for codigoCur_seq,'Gestão de RH', 'Psicologia e prática para trabalhar com Recursos Humanos, buscando e explorando habilidades das pessoas.', 2),
+(next value for codigoCur_seq,'Gestão Comercial', 'Administração e desenvolvimento de propagandas, vendas, gestão de projetos comerciais e liderança deequipe.', 2),
+(next value for codigoCur_seq,'Letras', 'Conhecimento e exploração profunda na literatura brasileira e básica na literatura mundial.', 2),
+(next value for codigoCur_seq,'Inglês', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3),
+(next value for codigoCur_seq,'Espanhol', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3),
+(next value for codigoCur_seq,'Alemão', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3),
+(next value for codigoCur_seq,'Francês', 'Gramática, leitura, audição e conversação do idioma na teoria e prática.', 3);
 
+--7
 INSERT INTO MATRICULA (codigo_curso, cpf_aluno, data_matricula )
 VALUES
 (9,'05020555555', '2020/03/23'),
@@ -314,303 +559,71 @@ VALUES
 (11,'73645095255', '2016/04/14'),
 (6,'74174171444', '2017/03/01');
 
-INSERT INTO DISCIPLINA(codigo,nome, qtde_creditos, matricula_prof)
+--8
+INSERT INTO COMPOE(codigo_curso,codigo_disc)
 VALUES
-(next value for disciplina_seq,'Cálculo 1', 2, 5),
-(next value for disciplina_seq,'Cálculo 2', 3, 1),
-(next value for disciplina_seq,'Probabilidade', 4, 8),
-(next value for disciplina_seq,'Equações Lineares', 5, 16),
-(next value for disciplina_seq,'Matemática Financeira', 3, 17),
-(next value for disciplina_seq,'Admin. e Contabilidade', 2, 9),
-(next value for disciplina_seq,'Mercado de Capitais', 4, 17),
-(next value for disciplina_seq,'Python', 3, 4),
-(next value for disciplina_seq,'Data Science e IA', 5, 12),
-(next value for disciplina_seq,'Banco de Dados', 6, 20),
-(next value for disciplina_seq,'Circuitos Elétricos', 3, 13),
-(next value for disciplina_seq,'Instalações Elétricas', 4, 13),
-(next value for disciplina_seq,'Elementos do Marketing', 3, 2),
-(next value for disciplina_seq,'Mapeamento do Público', 4, 2),
-(next value for disciplina_seq,'Criação e Melhorias', 5, 2),
-(next value for disciplina_seq,'Mídias Sociais', 6, 2),
-(next value for disciplina_seq,'Comportam. do Consumidor', 3, 18),
-(next value for disciplina_seq,'Comércio exterior', 4, 6),
-(next value for disciplina_seq,'Gestão de Projetos', 5, 6),
-(next value for disciplina_seq,'Introd. Psicologia', 2, 18),
-(next value for disciplina_seq,'Gestão de Competências', 3, 14),
-(next value for disciplina_seq,'Identif. Realoc. de Talentos', 4, 14),
-(next value for disciplina_seq,'Concepções de Linguagem', 2, 10),
-(next value for disciplina_seq,'Gêneros Literários', 3, 10),
-(next value for disciplina_seq,'Variação Linguística', 4, 10),
-(next value for disciplina_seq,'Literaturas na Educação Básica', 5, 10),
-(next value for disciplina_seq,'Inglês Básico', 2, 19),
-(next value for disciplina_seq,'Inglês Intermediário', 3, 19),
-(next value for disciplina_seq,'Inglês Avançado', 4, 15),
-(next value for disciplina_seq,'Espanhol Básico', 2, 3),
-(next value for disciplina_seq,'Espanhol Intermediário', 3, 3),
-(next value for disciplina_seq,'Espanhol Avançado', 4, 15),
-(next value for disciplina_seq,'Alemão Básico', 2, 11),
-(next value for disciplina_seq,'Alemão Intermediário', 3, 11),
-(next value for disciplina_seq,'Alemão Avançado', 4, 11),
-(next value for disciplina_seq,'Francês Básico', 2, 7),
-(next value for disciplina_seq,'Francês Intermediário', 3, 7),
-(next value for disciplina_seq,'Francês Avançado', 4, 7);
+(1, 1),
+(1, 2),
+(1, 3),
+(1, 4),
+(2, 5),
+(2, 6),
+(2, 7),
+(3, 1),
+(3, 3),
+(3, 8),
+(3, 9),
+(3, 10),
+(4, 1),
+(4, 11),
+(4, 12),
+(5, 13),
+(5, 14),
+(5, 15),
+(5, 16),
+(6, 6),
+(6, 20),
+(6, 21),
+(6, 22),
+(7, 6),
+(7, 13),
+(7, 17),
+(7, 18),
+(7, 19),
+(8, 23),
+(8, 24),
+(8, 25),
+(8, 26),
+(9, 27),
+(9, 28),
+(9, 29),
+(10, 30),
+(10, 31),
+(10, 32),
+(11, 33),
+(11, 34),
+(11, 35),
+(12, 36),
+(12, 37),
+(12, 38);
 
-E. CURSA(CPF, ID_DISC)
-('05020555555', 27),
-('06169933554', 23),
-('01437901196', 27),
-('01712609174', 23),
-('01861002026', 1),
-('02928272625', 1),
-('10130986185', 28),
-('10299761377', 28),
-('10468536559', 1),
-('11122233344', 3),
-('12141618201', 23),
-('12345678977', 6),
-('15234516524', 13),
-('16922268394', 14),
-('17780734413', 8),
-('18590127865', 23),
-('20297772132', 2),
-('21212121212', 29),
-('21985524001', 8),
-('22233344455', 2),
-('22558877441', 33),
-('23673275870', 36),
-('25361027740', 29),
-('27048779600', 29),
-('28736531478', 28),
-('30424283347', 17),
-('31914223344', 6),
-('32112035216', 24),
-('33355599988', 19),
-('33799787085', 11),
-('34123567630', 33),
-('35467646557', 4),
-('35487538954', 6),
-('37175290824', 13),
-('38863042693', 30),
-('40550794562', 6),
-('42238546431', 20),
-('43424140187', 31),
-('43926298300', 34),
-('44445555665', 27)
-('45614050170', 27),
-('47301802039', 36),
-('48989553908', 31),
-('50466400847', 9),
-('50677305777', 9),
-('51010052012', 11),
-('52201370078', 18),
-('52365057644', 21),
-('53392688143', 21),
-('54052809516', 22),
-('54584006209', 28),
-('55740561385', 6),
-('55775324274', 34),
-('56966642339', 8),
-('57428313254', 30),
-('57585758579', 4),
-('58157960405', 9),
-('59116065123', 21),
-('59349278470', 1),
-('60540596536', 13),
-('60803816994', 1),
-('61731914601', 30),
-('62491568861', 30),
-('62626255555', 6),
-('62923232666', 34),
-('64114550732', 36),
-('64179320731', 24),
-('64477543628', 14),
-('64828219030', 25),
-('65178894431', 37),
-('65305868797', 18),
-('65529569832', 38),
-('65867072600', 8),
-('65880245234', 36),
-('66230920635', 17),
-('66497186863', 33),
-('66581596036', 24),
-('66809234064', 4),
-('66932271437', 36),
-('67282946839', 14),
-('67554824469', 8),
-('67633622240', 6),
-('67688504928', 12),
-('67984297641', 30),
-('68334973043', 7),
-('68685648444', 23),
-('68752234762', 14),
-('68879822993', 6),
-('69036323845', 10),
-('69242576334', 33),
-('69386999246', 29),
-('69737674648', 1),
-('70071141059', 11),
-('70088350049', 16),
-('70439025450', 22),
-('70789700852', 30),
-('70930328207', 28),
-('71140376253', 9),
-('71262459124', 12),
-('71491051654', 32),
-('71841727055', 34),
-('72192402457', 13),
-('72453777190', 17),
-('72543077858', 11),
-('72618080077', 1),
-('73645095255', 32),
-('74174171444', 15),
-('74305831946', 22),
-('74836413320', 18),
-('75993583815', 28),
-('76027731386', 5),
-('77219049451', 1),
-('77681335684', 31),
-('79369087553', 9),
-('81056839422', 20),
-('82744591292', 21),
-('84432343161', 35),
-('85095067979', 3),
-('85285287414', 13),
-('86120095098', 10),
-('87807846899', 6),
-('89495598768', 27),
-('91183350638', 29),
-('92871102507', 7),
-('94558854373', 28),
-('96246606245', 21),
-('97934358114', 28),
-('98598598598', 22),
-('99141819171', 3),
-('99622109983', 25),
-('27048779600', 8),
-('28736531478', 14),
-('30424283347', 27),
-('31914223344', 4),
-('32112035216', 31),
-('33355599988', 28),
-('33799787085', 29),
-('34123567630', 27),
-('68685648444', 30),
-('68752234762', 28),
-('68879822993', 2),
-('69036323845', 27),
-('69242576334', 28),
-('69386999246', 9),
-('69737674648', 3),
-('70071141059', 27),
-('70088350049', 20),
-('70439025450', 13),
-('70789700852', 33),
-('70930328207', 14),
-('71140376253', 28),
-('71262459124', 9),
-('71491051654', 34),
-('71841727055', 27),
-('72192402457', 28),
-('72453777190', 29),
-('72543077858', 27),
-('72618080077', 10),
-('73645095255', 35),
-('74174171444', 21);
-
-F. COMPOE(ID_CURSO, ID_DISC)
-(1, 1)
-(1, 2)
-(1, 3)
-(1, 4)
-(2, 5)
-(2, 6)
-(2, 7)
-(3, 1)
-(3, 3)
-(3, 8)
-(3, 9)
-(3, 10)
-(4, 1)
-(4, 11)
-(4, 12)
-(5, 13)
-(5, 14)
-(5, 15)
-(5, 16)
-(6, 6)
-(6, 20)
-(6, 21)
-(6, 22)
-(7, 6)
-(7, 13)
-(7, 17)
-(7, 18)
-(7, 19)
-(8, 23)
-(8, 24)
-(8, 25)
-(8, 26)
-(9, 27)
-(9, 28)
-(9, 29)
-(10, 30)
-(10, 31)
-(10, 32)
-(11, 33)
-(11, 34)
-(11, 35)
-(12, 36)
-(12, 37)
-(12, 38)
-G. PROFESSOR(NOME, ENDERECO, TELEFONE, DATA_NASC, ID_DEPTO, DATA_CONTR)
-('Gabriela Genir Marinho', '000 Wright Motorway Suite 352', '+1-006-414-8797', '1954/12/08', 1, '2016/12/13')
-('Marli de Holanda Opinvic', '00183 Charles Mountain', '+1-008-628-9256x246', '1963/01/15', 2, '2016/04/07')
-('Walter Mário de Muniz', '00626 Jonathan Hollow Apt. 314', '+55-11-99999-8888', '1958/03/21', 3, '2016/09/25')
-('Cléber de Vasconcelos', '0134 Murray Walk', '+55-11-4224-2626', '1957/08/09', 9, '2020/10/05')
-('Selena Caroline Cavalcante da Silva', '0137 Shelton Rest Apt. 273', '+1-013-001-8838', '1935/01/04', 1, '2016/11/09')
-('Gabriela da Silva de Macedo', '0165 Drew Junction Suite 552', '+1-026-402-2651', '1930/10/06', 2, '2020/05/17')
-('Heitor Raul de Meireles Rilia', '0181 Ronald Brooks', '+1-032-081-6436', '1950/02/02', 3, '2019/02/06')
-('Gabriela Maria Ribohi Valente', '01932 Garcia Expressway Suite 183', '+1-037-591-5560x81884', '1954/04/20', 9, '2021/05/24')
-('Lúcio Ceilson', '015 Johnson Stravenue Suite 582', '+1-019-168-1103x30298', '1973/04/25', 1, '2021/07/06')
-('Marco Yumoma Neto', '01627 Lopez Path Suite 161', '+1-024-173-1193x0353', '1969/05/22', 2, '2016/04/18')
-('Áureo de Palhares Neiol', '0214 Ramos Bypass Apt. 986', '+55-51-92929-5550', '1951/02/26', 3, '2017/08/24')
-('Sílvia Rosimeire Franco', '022 Thomas Ridges Apt. 464', '+55-11-91010-2020', '1940/04/04', 9, '2019/12/03')
-('João Osvaldo de Oliva do Prado', '02794 Carr Mountains', '+55-11-97887-8007', '1942/05/15', 1, '2020/10/08')
-('Flaviana Supugeko de Arantes', '031 Cook Ville Suite 523', '+55-21-90909-4444', '1996/05/07', 2, '2016/07/30')
-('Ronaldo Severino Berrea Bozuga', '03656 Ward Plaza Apt. 978', '+1-047-466-1919x28434', '1931/01/12', 3, '2017/09/14')
-('Romildo Ademar da Silva Fragoso Júnior', '0377 Joshua Circle', '+1-051-279-6304x91019', '1942/11/25', 9, '2017/09/05')
-('Bella Biwo', '03836 Lydia Creek Apt. 778', '+1-060-465-8808x51762', '1932/08/15', 1, '2016/06/23')
-('Márcio de Oliveira Negrão', '041 Lin Lock', '+1-061-832-1376x6059', '1930/02/21', 2, '2021/06/15')
-('Décio de Leão do Amaral Terceiro', '04312 Haley Island', '+1-065-022-0820', '1981/04/06', 3, '2016/06/03')
-('Moacyr Arthur Góis', '05983 Michael Spring Suite 047', '+55-19-90001-8889', '1986/02/28', 9, '2021/09/05')
-
-INSERT INTO DEPARTAMENTO(NOME)
+--9
+INSERT INTO PRE_REQ(codigo_disc,codigo_disc_dependencia)
 VALUES
-(next value for disciplina_seq,Exatas'),
-('Humanas'),
-('Idiomas'),
-('Diretoria'),
-('Administração'),
-('Secretaria'),
-('Financeiro'),
-('RH'),
-('TI');
-
-I. PRE_REQ(ID_DISC, ID_DISC_NECESSARIA)
-(2, 1)
-(7, 5)
-(9, 8)
-(12, 11)
-(15, 13)
-(18, 13)
-(19, 6)
-(22, 20)
-(26, 24)
-(28, 27)
-(29, 28)
-(31, 30)
-(32, 31)
-(34, 33)
-(35, 34)
-(37, 36)
-(38, 37)
+(2, 1),
+(7, 5),
+(9, 8),
+(12, 11),
+(15, 13),
+(18, 13),
+(19, 6),
+(22, 20),
+(26, 24),
+(28, 27),
+(29, 28),
+(31, 30),
+(32, 31),
+(34, 33),
+(35, 34),
+(37, 36),
+(38, 37);
