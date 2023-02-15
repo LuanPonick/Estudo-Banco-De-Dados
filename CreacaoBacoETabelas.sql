@@ -1,7 +1,5 @@
 CREATE database Projeto;
-use Projeto;
-use master
-drop database Projeto
+USE Projeto;
 
 --1
 CREATE TABLE ALUNO (
